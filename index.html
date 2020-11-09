@@ -13,7 +13,7 @@
        //basic map config with custom fills, mercator projection
     var election = new Datamap({
   scope: 'usa',
-  element: document.getElementById('map_election'),
+  element: document.getElementById('election-map-2020'),
   geographyConfig: {
     highlightBorderColor: '#bada55',
    popupTemplate: function(geography, data) {
@@ -236,5 +236,6 @@ data:{
 });
 election.labels();
      </script>
+  <div id='election-map-2020'></div>
 </body>
 </html>
