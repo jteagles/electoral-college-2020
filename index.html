@@ -223,6 +223,13 @@ function redraw() {
         "electoralVotes": 32
       }
     };
+  
+  for (state in data) {
+    var abbr = data[state].stateAbbr;
+    mapData[abbr].fillKey = "Republican";
+    console.log(abbr);
+  }
+
   //basic map config with custom fills, mercator projection
   var election = new Datamap({
     scope: 'usa',
