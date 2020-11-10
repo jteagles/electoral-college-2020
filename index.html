@@ -225,9 +225,10 @@ function redraw() {
     };
   
   for (state in data) {
+    console.log(state);
     var abbr = data[state].stateAbbr;
-    mapData[abbr].fillKey = "Republican";
     console.log(abbr);
+    mapData[abbr].fillKey = "Republican";
   }
 
   //basic map config with custom fills, mercator projection
