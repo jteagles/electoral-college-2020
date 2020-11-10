@@ -230,7 +230,7 @@ function redraw() {
     if (typeof state === 'undefined' || state === 'US') {
       continue;
     }
-    if (mapData[state].fillKey = data.states[state].races[0].questions.RACETH4.responses[response].responseText !== 'White') {
+    if (mapData[state].fillKey = data.states[state].races[0].questions.RACETH4.responses[response].responseText !== 'Black') {
       console.log(state + 'bad data')
     }
     mapData[state].fillKey = data.states[state].races[0].questions.RACETH4.responses[response].voteBreakdown[0].party;
