@@ -21,28 +21,7 @@ console.log(data.states.AK);
 
 function redraw() {
 
-  //basic map config with custom fills, mercator projection
-  var election = new Datamap({
-    scope: 'usa',
-    element: document.getElementById('election-map-2020'),
-    geographyConfig: {
-      highlightBorderColor: '#bada55',
-      popupTemplate: function(geography, data) {
-        return '<div class="hoverinfo">' + geography.properties.name + 'Electoral Votes:' +  data.electoralVotes + ' '
-      },
-      highlightBorderWidth: 3
-    },
-
-    fills: {
-      'Republican': '#CC4731',
-      'Democrat': '#306596',
-      'Heavy Democrat': '#667FAF',
-      'Light Democrat': '#A9C0DE',
-      'Heavy Republican': '#CA5E5B',
-      'Light Republican': '#EAA9A8',
-      defaultFill: '#EDDC4E'
-    },
-    data:{
+    var mapData = {
       "AZ": {
         "fillKey": "Republican",
         "electoralVotes": 5
@@ -243,7 +222,29 @@ function redraw() {
         "fillKey": "Republican",
         "electoralVotes": 32
       }
-    }
+    };
+  //basic map config with custom fills, mercator projection
+  var election = new Datamap({
+    scope: 'usa',
+    element: document.getElementById('election-map-2020'),
+    geographyConfig: {
+      highlightBorderColor: '#bada55',
+      popupTemplate: function(geography, data) {
+        return '<div class="hoverinfo">' + geography.properties.name + 'Electoral Votes:' +  data.electoralVotes + ' '
+      },
+      highlightBorderWidth: 3
+    },
+
+    fills: {
+      'Republican': '#CC4731',
+      'Democrat': '#306596',
+      'Heavy Democrat': '#667FAF',
+      'Light Democrat': '#A9C0DE',
+      'Heavy Republican': '#CA5E5B',
+      'Light Republican': '#EAA9A8',
+      defaultFill: '#EDDC4E'
+    },
+    data: mapData
   });
   election.labels();
 }
