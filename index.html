@@ -226,6 +226,9 @@ function redraw() {
   
   console.log(mapData);
   for (state in data.states) {
+    if (typeof state !== 'undefined' || state === 'US') {
+      continue;
+    }
     console.log(state);
     var abbr = data.states[state].stateAbbr;
     console.log(mapData[state]);
