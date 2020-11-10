@@ -228,6 +228,7 @@ function redraw() {
   for (state in data.states) {
     console.log(state);
     var abbr = data.states[state].stateAbbr;
+    console.log(mapData[state]);
     mapData[abbr].fillKey = "Republican";
   }
 
