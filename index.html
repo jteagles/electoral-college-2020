@@ -224,10 +224,10 @@ function redraw() {
       }
     };
   
+  console.log(mapData);
   for (state in data.states) {
     console.log(state);
     var abbr = data.states[state].stateAbbr;
-    console.log(abbr);
     mapData[abbr].fillKey = "Republican";
   }
 
