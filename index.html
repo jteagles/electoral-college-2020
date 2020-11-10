@@ -226,7 +226,7 @@ function redraw() {
   
   console.log(mapData);
   for (state in data.states) {
-    if (typeof state !== 'undefined' || state === 'US') {
+    if (typeof state === 'undefined' || state === 'US') {
       continue;
     }
     console.log(state);
@@ -234,6 +234,7 @@ function redraw() {
     console.log(mapData[state]);
     mapData[abbr].fillKey = "Republican";
   }
+  console.log(mapData);
 
   //basic map config with custom fills, mercator projection
   var election = new Datamap({
